@@ -2,8 +2,8 @@ var aws = require('aws-sdk');
 var express  = require('express');
 var http = require('http');
 var app = express();
-var queueUrl = "https://sqs.us-east-1.amazonaws.com/189843593504/anicaport_delete_dev";
-var delQueryUrl = "https://sqs.us-east-1.amazonaws.com/189843593504/anicaport_status_dev";
+var queueUrl = "<source queue url>";
+var delQueryUrl = "<delete queue url>";
 
 // Load your AWS credentials and try to instantiate the object.
 aws.config.loadFromPath(__dirname + '/config.json');
@@ -12,7 +12,7 @@ aws.config.loadFromPath(__dirname + '/config.json');
 var sqs = new aws.SQS();
 var s3 = new aws.S3();
 var ets = new aws.ElasticTranscoder();
-var pipelineId = '1474890258149-m40gy6';
+var pipelineId = '<transcoder pipeline id>';
 
 var interval = setInterval(function(){
 
